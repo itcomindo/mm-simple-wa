@@ -23,18 +23,27 @@ function mm_simwa_options() {
 				// Options.
 				// ##############################
 
+				// ##############################
+				// Greeting Style.
+				// ##############################
+
+				Field::make( 'separator', 'displayoptionssimwasep', 'Display Options' )
+				->set_classes( 'simwa-sep-child simwa-email' ),
+
 				// select option to choose style 1 to 5.
 				Field::make( 'select', 'mm_simwa_style', 'Choose Style' )
+				->set_width( 33 )
 				->add_options(
 					array(
 						'default' => 'Style 1',
 					)
 				)
-				->set_default_value( 'default' )
-				->set_help_text( 'Choose style for your contact button.' ),
+						->set_default_value( 'default' )
+						->set_help_text( 'Choose style for your contact button.' ),
 
 				// select option to choose position bottom left, bottom right, floating left or floating right.
 				Field::make( 'select', 'mm_simwa_position', 'Choose Position' )
+				->set_width( 33 )
 				->add_options(
 					array(
 						'bottom-left'    => 'Bottom Left',
@@ -43,11 +52,12 @@ function mm_simwa_options() {
 						'floating-right' => 'Floating Right',
 					)
 				)
-				->set_default_value( 'bottom-right' )
-				->set_help_text( 'Choose position for your contact button.' ),
+						->set_default_value( 'bottom-right' )
+						->set_help_text( 'Choose position for your contact button.' ),
 
 				// Select with option hide on screen width below 768px and 495px.
 				Field::make( 'select', 'mm_simwa_hide_on', 'Hide on Screen Width' )
+				->set_width( 33 )
 				->add_options(
 					array(
 						'none' => 'Display on all devices',
@@ -57,6 +67,13 @@ function mm_simwa_options() {
 				)
 				->set_default_value( 'none' )
 				->set_help_text( 'Hide contact button on screen width below 768px or 495px.' ),
+
+				// ##############################
+				// Greeting Style.
+				// ##############################
+
+				Field::make( 'separator', 'greetingoptionssimwasep', 'Greeting Options' )
+				->set_classes( 'simwa-sep-child simwa-email' ),
 
 				// Checkbox show greeting or not.
 				Field::make( 'checkbox', 'mm_simwa_show_greeting', 'Show Greeting' )
@@ -71,7 +88,7 @@ function mm_simwa_options() {
 				->set_help_text( 'Enter max characters for greeting text. e.g selamat datang di website kami bossQ. NOTE: this will work if show greeting is CHECKED!' ),
 
 				// Checkbox to use logo or not.
-				Field::make( 'checkbox', 'mm_simwa_use_logo', 'Use Logo' )
+				Field::make( 'checkbox', 'mm_simwa_use_logo', 'Use Logo on trigger' )
 				->set_option_value( 'yes' )
 				->set_default_value( false )
 				->set_help_text( 'Use your logo in the greeting. if not checked it will use default icon' ),
@@ -96,6 +113,13 @@ function mm_simwa_options() {
 				->set_default_value( 'Customer Service' )
 				->set_help_text( 'Enter text under logo or icon e.g Customer Service. Leave it blank if you dont need!.' ),
 
+				// ##############################
+				// Additional Options.
+				// ##############################
+
+				Field::make( 'separator', 'additionaloptionssimwasep', 'Additional Options' )
+				->set_classes( 'simwa-sep-child simwa-email' ),
+
 				// checkbox to include post title just in post, page or singular.
 				Field::make( 'checkbox', 'mm_simwa_include_title', 'Include Post Title' )
 				->set_option_value( 'yes' )
@@ -118,11 +142,9 @@ function mm_simwa_options() {
 				->set_default_value( 'yang ada di' )
 				->set_help_text( 'Enter your URL prefix e.g yang ada di' ),
 
-				// checkbox to show icon.
-				Field::make( 'checkbox', 'mm_simwa_show_icon', 'Show Icon' )
-				->set_option_value( 'yes' )
-				->set_default_value( true )
-				->set_help_text( 'Check if you want to Show icon in the button.' ),
+				// Preview.
+				Field::make( 'html', 'prevsimwa', 'Preview' )
+				->set_html( '<span>Your message could be like this: Your prefix message + your post title + your url prefix + your post url. (e.g: Hi, saya ingin bertanya tentang judul post yang ada di https://somedomain.com/xxx/xxx/)</span>' ),
 
 				// ##############################
 				// Buttons.

@@ -21,6 +21,12 @@ function simwa_buttons_option() {
 		Field::make( 'separator', 'buttonssimwasep', 'Buttons Options' )
 		->set_classes( 'simwa-sep simwa-call' ),
 
+		// checkbox to show icon.
+		Field::make( 'checkbox', 'mm_simwa_show_icon', 'Show Icon' )
+		->set_option_value( 'yes' )
+		->set_default_value( true )
+		->set_help_text( 'Check if you want to Show icon in the button it will display default icon related to the platform.' ),
+
 		Field::make( 'separator', 'callsimwasep', 'Calling Options' )
 		->set_classes( 'simwa-sep-child simwa-call' ),
 
