@@ -1,0 +1,210 @@
+:root {
+  --simwa-telegram-color: #0088cc;
+  --simwa-whatsapp-color: #25d366;
+  --simwa-skype-color: #00aff0;
+  --simwa-gmail-color: #d14836;
+}
+
+#simwa-container div,
+#simwa-container ul,
+#simwa-container li,
+#simwa-container a {
+  box-sizing: border-box;
+}
+#simwa-container svg {
+  width: 30px;
+}
+#simwa-container {
+  position: fixed;
+  bottom: 3rem;
+  right: 1rem;
+  width: 100px;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+ul.simwa-btn-wr {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+ul.simwa-btn-wr li {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  padding: 4px 0;
+}
+ul.simwa-btn-wr li a {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.1;
+}
+ul.simwa-btn-wr li a svg {
+  width: 25px;
+}
+
+/* skype */
+a.simwa-call-btn svg {
+  fill: var(--simwa-skype-color);
+}
+
+/* whatsapp */
+a.simwa-wa-btn svg {
+  fill: var(--simwa-whatsapp-color);
+}
+
+/* telegram */
+a.simwa-telegram-btn svg {
+  fill: var(--simwa-telegram-color);
+}
+
+/* gmail */
+a.simwa-email-btn svg {
+  fill: var(--simwa-gmail-color);
+}
+
+/**
+=========================
+* Trigger
+*=========================
+*/
+
+span.simwa-text-logo {
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.1;
+  margin: 0;
+  box-sizing: border-box;
+  width: 75%;
+}
+#simwa-trigger svg {
+  width: 40px;
+  fill: var(--simwa-whatsapp-color);
+}
+#simwa-trigger {
+  cursor: pointer;
+  position: fixed;
+  right: 1rem;
+  bottom: 2rem;
+  width: 84px;
+  height: 84px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 35px;
+}
+#simwa-trigger.simwa-sleep {
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: 0.3s linear all;
+}
+
+#simwa-trigger.simwa-show {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  z-index: 999999;
+  transition: 0.3s linear all;
+}
+
+#simwa-trigger:after {
+  content: "";
+  width: 100%;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+  opacity: 0.5;
+  filter: blur(5px);
+}
+
+#simwa-trigger img {
+  width: 40px;
+  height: auto;
+}
+
+/**
+=========================
+* Greeting
+*=========================
+*/
+
+#simwa-greeting-wr {
+  position: fixed;
+  bottom: calc(0.5rem + 80px);
+  right: calc(1rem + 100px);
+  width: 100px;
+  padding: 1rem;
+  font-size: 12px;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  line-height: 1.1;
+  cursor: pointer;
+}
+#simwa-greeting-wr.simwa-sleep {
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: 0.3s linear all;
+}
+
+#simwa-greeting-wr.simwa-show {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  z-index: 999999;
+  transition: 0.3s linear all;
+}
+
+/**
+=========================
+* Responsive
+*=========================
+*/
+/**
+=========================
+* 768px
+* @todo 768px
+*=========================
+*/
+@media screen and (max-width: 768px) {
+  #simwa-greeting-wr[data-simwa-show="768"],
+  #simwa-trigger[data-simwa-show="768"],
+  #simwa-container[data-simwa-show="768"] {
+    display: none !important;
+  }
+}
+
+/**
+=========================
+* 495px
+* @todo 495px
+*=========================
+*/
+@media screen and (max-width: 495px) {
+  #simwa-greeting-wr[data-simwa-show="495"],
+  #simwa-trigger[data-simwa-show="495"],
+  #simwa-container[data-simwa-show="495"] {
+    display: none !important;
+  }
+}
