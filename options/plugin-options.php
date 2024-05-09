@@ -124,45 +124,17 @@ function mm_simwa_options() {
 				->set_default_value( true )
 				->set_help_text( 'Check if you want to Show icon in the button.' ),
 
-				// Call Number.
-				Field::make( 'text', 'mm_simwa_call_number', 'Call Number' )
-				->set_default_value( '0813-9891-2341' )
-				->set_help_text( 'Enter your phone number e.g 0813-9891-2341 or leave it blank if you dont want to show this button' ),
+				// ##############################
+				// Buttons.
+				// ##############################
 
-				// Call button text.
-				Field::make( 'text', 'mm_simwa_call_btn_text', 'Call Button Text' )
-				->set_default_value( 'Call Us' )
-				->set_help_text( 'Enter your call button text e.g Call Us' ),
+				...simwa_buttons_option(),
 
-				// Wa Number.
-				Field::make( 'text', 'mm_simwa_wa_number', 'WhatsApp Number' )
-				->set_default_value( '0813-9891-2341' )
-				->set_help_text( 'Enter your WhatsApp number e.g 0813-9891-2341 or leave it blank if you dont want to show this button' ),
+				// ##############################
+				// Styling Options.
+				// ##############################
 
-				// Wa button text.
-				Field::make( 'text', 'mm_simwa_wa_btn_text', 'WhatsApp Button Text' )
-				->set_default_value( 'Chat via WhatsApp' )
-				->set_help_text( 'Enter your WhatsApp button text e.g Chat via WhatsApp' ),
-
-				// Telegram Number.
-				Field::make( 'text', 'mm_simwa_telegram', 'Telegram Number' )
-				->set_default_value( '@budi_haryono' )
-				->set_help_text( 'Enter your Telegram username e.g @budi_haryono or leave it blank if you dont want to show this button' ),
-
-				// Telegram button text.
-				Field::make( 'text', 'mm_simwa_telegram_btn_text', 'Telegram Button Text' )
-				->set_default_value( 'Chat via Telegram' )
-				->set_help_text( 'Enter your Telegram button text e.g Chat via Telegram' ),
-
-				// Email.
-				Field::make( 'text', 'mm_simwa_email', 'Email' )
-				->set_default_value( 'Jon@doe.com' )
-				->set_help_text( 'Enter your Email address or leave it blank if you dont want to show this button' ),
-
-				// Email button text.
-				Field::make( 'text', 'mm_simwa_email_btn_text', 'Email Button Text' )
-				->set_default_value( 'Send Email' )
-				->set_help_text( 'Enter your email button text e.g Send Email' ),
+				...simwa_style_options(),
 
 			)
 		);

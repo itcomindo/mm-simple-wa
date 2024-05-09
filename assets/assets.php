@@ -26,3 +26,12 @@ function simwa_call_assets() {
 	wp_enqueue_script( 'mm-simple-wa', MM_SIMPLE_WA_URL . 'assets/js/js.js', array( 'jquery' ), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'simwa_call_assets' );
+
+
+/**
+ * Load simwa-admin.css
+ */
+function simwa_call_admin_assets() {
+	wp_enqueue_style( 'mm-simwa-admin', MM_SIMPLE_WA_URL . 'assets/css/simwa-admin.css', array(), '1.0', 'all' );
+}
+add_action( 'admin_enqueue_scripts', 'simwa_call_admin_assets' );

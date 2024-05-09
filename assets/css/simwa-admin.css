@@ -1,0 +1,28 @@
+.simwa-sep {
+  background-color: black;
+  color: white;
+}
+.simwa-sep h3 {
+  color: white;
+  font-size: 15px;
+  line-height: 1.1;
+  margin: 4px 0;
+}
+
+.simwa-sep-child.simwa-call {
+  background-color: #00aff0;
+}
+.simwa-sep-child.simwa-wa {
+  background-color: #25d366;
+}
+.simwa-sep-child.simwa-telegram {
+  background-color: #0088cc;
+}
+.simwa-sep-child.simwa-email {
+  background-color: #d14836;
+}
+.simwa-sep-child h3 {
+  font-size: 13px;
+  color: white;
+  margin: 0;
+}

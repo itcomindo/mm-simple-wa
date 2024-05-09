@@ -147,4 +147,4 @@ add_action( 'plugins_loaded', 'mm_simple_wa_cf_loaded' );
 // Required necessary files.
 require_once MM_SIMPLE_WA_PATH . 'assets/assets.php';
 require_once MM_SIMPLE_WA_PATH . 'components/components.php';
-require_once MM_SIMPLE_WA_PATH . 'options.php';
+require_once MM_SIMPLE_WA_PATH . 'options/options.php';
