@@ -14,10 +14,35 @@
 #simwa-container svg {
   width: 30px;
 }
+
+/* botom right */
+#simwa-container[data-simwa-position="bottom-right"] {
+  right: 1rem;
+  bottom: 3rem;
+}
+
+/* botom left */
+#simwa-container[data-simwa-position="bottom-left"] {
+  left: 1rem;
+  bottom: 3rem;
+}
+
+/* Floating Left */
+#simwa-container[data-simwa-position="floating-left"] {
+  left: 1rem;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+/* Floating Right */
+#simwa-container[data-simwa-position="floating-right"] {
+  right: 1rem;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
 #simwa-container {
   position: fixed;
-  bottom: 3rem;
-  right: 1rem;
   width: 100px;
   padding: 1.5rem 1rem;
   box-sizing: border-box;
@@ -107,6 +132,29 @@ span.simwa-text-logo {
   justify-content: center;
   border-radius: 35px;
 }
+
+#simwa-trigger[data-simwa-position="bottom-right"] {
+  right: 1rem;
+  bottom: 2rem;
+}
+
+#simwa-trigger[data-simwa-position="bottom-left"] {
+  left: 1rem;
+  bottom: 2rem;
+}
+
+#simwa-trigger[data-simwa-position="floating-left"] {
+  left: 1rem;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+#simwa-trigger[data-simwa-position="floating-right"] {
+  right: 1rem;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
 #simwa-trigger.simwa-sleep {
   transform: scale(0);
   opacity: 0;
@@ -149,8 +197,6 @@ span.simwa-text-logo {
 
 #simwa-greeting-wr {
   position: fixed;
-  bottom: calc(0.5rem + 80px);
-  right: calc(1rem + 100px);
   width: 100px;
   padding: 1rem;
   font-size: 12px;
@@ -160,6 +206,27 @@ span.simwa-text-logo {
   line-height: 1.1;
   cursor: pointer;
 }
+#simwa-greeting-wr[data-simwa-position="bottom-right"] {
+  right: calc(1rem + 100px);
+  bottom: calc(0.5rem + 80px);
+}
+#simwa-greeting-wr[data-simwa-position="bottom-left"] {
+  left: calc(1rem + 100px);
+  bottom: calc(0.5rem + 80px);
+}
+
+#simwa-greeting-wr[data-simwa-position="floating-left"] {
+  left: calc(1rem + 100px);
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+#simwa-greeting-wr[data-simwa-position="floating-right"] {
+  right: calc(1rem + 100px);
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
 #simwa-greeting-wr.simwa-sleep {
   transform: scale(0);
   opacity: 0;

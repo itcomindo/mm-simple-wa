@@ -358,3 +358,12 @@ function simwa_post_url() {
 	}
 	return $url;
 }
+
+
+/**
+ * Get Position
+ */
+function mm_simwa_position() {
+	$mm_simwa_position = carbon_get_theme_option( 'mm_simwa_position' );
+	return $mm_simwa_position;
+}

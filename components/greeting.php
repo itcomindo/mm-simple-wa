@@ -38,7 +38,7 @@ function simwa_trigger() {
 		$logo_under_text = '';
 	}
 	?>
-	<div id="simwa-trigger" class="simwa-sleep <?php echo esc_html( carbon_get_theme_option( 'mm_simwa_style' ) ); ?>" data-simwa-show="<?php echo esc_html( $data_show ); ?>">
+	<div id="simwa-trigger" class="simwa-sleep <?php echo esc_html( carbon_get_theme_option( 'mm_simwa_style' ) ); ?>" data-simwa-show="<?php echo esc_html( $data_show ); ?>" data-simwa-position="<?php echo esc_html( mm_simwa_position() ); ?>">
 		<?php
 		echo wp_kses( $mm_simwa_logo, simwa( array( 'svg', 'img' ) ) );
 		echo wp_kses( $logo_under_text, simwa( array( 'span' ) ) );
@@ -58,7 +58,7 @@ function simwa_greeting_container() {
 		$mm_simwa_greeting_text = carbon_get_theme_option( 'mm_simwa_greeting_text' );
 		if ( $mm_simwa_greeting_text ) {
 			?>
-			<div id="simwa-greeting-wr" class="simwa-sleep <?php echo esc_html( carbon_get_theme_option( 'mm_simwa_style' ) ); ?>" data-simwa-show="<?php echo esc_html( $data_show ); ?>">
+			<div id="simwa-greeting-wr" class="simwa-sleep <?php echo esc_html( carbon_get_theme_option( 'mm_simwa_style' ) ); ?>" data-simwa-show="<?php echo esc_html( $data_show ); ?>" data-simwa-position="<?php echo esc_html( mm_simwa_position() ); ?>">
 				<span class="simwa-greeting-text">
 					<?php echo esc_html( $mm_simwa_greeting_text ); ?>
 				</span>
