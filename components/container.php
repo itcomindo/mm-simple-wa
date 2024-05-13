@@ -16,7 +16,7 @@ function mm_simwa_container() {
 	$data_show = carbon_get_theme_option( 'mm_simwa_hide_on' );
 	$bg_color  = carbon_get_theme_option( 'simwa_button_container_bg_color' );
 	?>
-	<div id="simwa-container" class="simwa-show <?php echo esc_html( carbon_get_theme_option( 'mm_simwa_style' ) ); ?>" data-simwa-show="<?php echo esc_html( $data_show ); ?>" data-simwa-position="<?php echo esc_html( mm_simwa_position() ); ?>" style="background-color: <?php echo esc_html( $bg_color ); ?>;">
+	<div id="simwa-container" class="simwa-sleep <?php echo esc_html( carbon_get_theme_option( 'mm_simwa_style' ) ); ?>" data-simwa-show="<?php echo esc_html( $data_show ); ?>" data-simwa-position="<?php echo esc_html( mm_simwa_position() ); ?>" style="background-color: <?php echo esc_html( $bg_color ); ?>;">
 		<div id="simwa-close">X</div>
 		<ul class="simwa-btn-wr">
 			<?php
