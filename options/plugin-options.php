@@ -36,6 +36,7 @@ function mm_simwa_options() {
 				->add_options(
 					array(
 						'default' => 'Style 1',
+						'simwa-2' => 'Style 2',
 					)
 				)
 						->set_default_value( 'default' )
