@@ -81,6 +81,7 @@ function simwa( $html_tags_allowed = array() ) {
 			$attributes['rel']    = array();
 			$attributes['style']  = array();
 			$attributes['class']  = array();
+			$attributes['fill']   = array();
 		}
 
 		// Jika tag adalah SVG, gunakan atribut yang telah didefinisikan dalam $svg_args.
@@ -148,3 +149,14 @@ add_action( 'plugins_loaded', 'mm_simple_wa_cf_loaded' );
 require_once MM_SIMPLE_WA_PATH . 'assets/assets.php';
 require_once MM_SIMPLE_WA_PATH . 'components/components.php';
 require_once MM_SIMPLE_WA_PATH . 'options/options.php';
+
+
+/**
+ * Simwa Load Greeting
+ */
+function simwa_greeting() {
+	if ( carbon_get_theme_option( 'mm_simwa_show_greeting' ) ) {
+		add_action( 'wp_body_open', 'simwa_greeting_container' );
+	}
+}
+add_action( 'init', 'simwa_greeting' );

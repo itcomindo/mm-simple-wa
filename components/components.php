@@ -24,7 +24,8 @@ function simwa_data_show() {
 // Required necessary files.
 require_once MM_SIMPLE_WA_PATH . 'components/container.php';
 require_once MM_SIMPLE_WA_PATH . 'components/greeting.php';
-require_once MM_SIMPLE_WA_PATH . 'components/wa-btn.php';
-require_once MM_SIMPLE_WA_PATH . 'components/call-btn.php';
-require_once MM_SIMPLE_WA_PATH . 'components/email-btn.php';
-require_once MM_SIMPLE_WA_PATH . 'components/telegram-btn.php';
+require_once MM_SIMPLE_WA_PATH . 'components/trigger.php';
+require_once MM_SIMPLE_WA_PATH . 'components/whatsapp-button.php';
+require_once MM_SIMPLE_WA_PATH . 'components/call-button.php';
+require_once MM_SIMPLE_WA_PATH . 'components/email-button.php';
+require_once MM_SIMPLE_WA_PATH . 'components/telegram-button.php';

@@ -77,6 +77,7 @@ ul.simwa-btn-wr li a {
   border-radius: 5px;
   transition: 0.2s linear all;
 }
+
 ul.simwa-btn-wr li a:hover {
   transform: translateY(-2px);
   transition: 0.2s linear all;
@@ -84,26 +85,6 @@ ul.simwa-btn-wr li a:hover {
 ul.simwa-btn-wr li a svg {
   width: 25px;
 }
-
-/* skype */
-/* a.simwa-call-btn svg {
-  fill: var(--simwa-skype-color);
-} */
-
-/* whatsapp */
-/* a.simwa-wa-btn svg {
-  fill: var(--simwa-whatsapp-color);
-} */
-
-/* telegram */
-/* a.simwa-telegram-btn svg {
-  fill: var(--simwa-telegram-color);
-} */
-
-/* gmail */
-/* a.simwa-email-btn svg {
-  fill: var(--simwa-gmail-color);
-} */
 
 /**
 =========================

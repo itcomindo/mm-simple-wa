@@ -38,7 +38,7 @@ function simwa_style_options() {
 		->set_help_text( 'Set the text color of the trigger button.' ),
 
 		// Trigger icon color.
-		Field::make( 'color', 'simwa_trigger_icon_color', 'Trigger Icon Color' )
+		Field::make( 'color', 'simwa_trigger_icon_color', 'Trigger Icon Colorssss' )
 			->set_width( 33 )
 			->set_alpha_enabled( true )
 			->set_default_value( '#25d366' )

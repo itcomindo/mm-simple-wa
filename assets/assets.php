@@ -16,6 +16,7 @@ require_once MM_SIMPLE_WA_PATH . 'assets/images/icons.php';
  * Load necessary assets.
  */
 function simwa_call_assets() {
+	wp_enqueue_style( 'mm-simwa-boxicons', 'https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css', array(), '2.1.4', 'all' );
 	// Load CSS.
 	wp_enqueue_style( 'mm-simwa-style', MM_SIMPLE_WA_URL . 'assets/css/style.css', array(), '1.0', 'all' );
 

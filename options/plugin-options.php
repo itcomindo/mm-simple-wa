@@ -72,7 +72,7 @@ function mm_simwa_options() {
 				// Greeting Style.
 				// ##############################
 
-				Field::make( 'separator', 'greetingoptionssimwasep', 'Greeting Options' )
+				Field::make( 'separator', 'greetingoptionssimwasep', 'Greeting and Trigger Options' )
 				->set_classes( 'simwa-sep-child simwa-email' ),
 
 				// Checkbox show greeting or not.
@@ -80,6 +80,12 @@ function mm_simwa_options() {
 				->set_option_value( 'yes' )
 				->set_default_value( true )
 				->set_help_text( 'Show greeting text or callout, e.g Selamat datang bosq.' ),
+
+				// Greeting Width.
+				Field::make( 'text', 'mm_simwa_greeting_width', 'Greeting Width' )
+				->set_attribute( 'type', 'number' )
+				->set_default_value( 100 )
+				->set_help_text( 'Set or adjust the greeting message box, width in pixel, just input number without px' ),
 
 				// Textarea max 100 characters for greeting.
 				Field::make( 'textarea', 'mm_simwa_greeting_text', 'Greeting Max Characters' )
@@ -162,136 +168,6 @@ function mm_simwa_options() {
 		);
 }
 add_action( 'carbon_fields_register_fields', 'mm_simwa_options' );
-
-
-/**
- * Get DATA
- */
-function mm_simwa_get_data() {
-	$data = array();
-
-	// Greeting.
-	$greeeting = carbon_get_theme_option( 'mm_simwa_greeting' );
-	if ( ! empty( $greeeting ) ) {
-		$data['greeting'] = $greeeting;
-	} else {
-		$data['greeting'] = 'Hi admin kamu belum memasukan text greeting.';
-	}
-
-	// Email.
-	$email = carbon_get_theme_option( 'mm_simwa_email' );
-	if ( ! empty( $email ) ) {
-		$data['email']      = $email;
-		$data['email_link'] = 'mailto:' . $email;
-	} else {
-		$data['email']      = 'email@email.com';
-		$data['email_link'] = 'mailto:email@email.com';
-	}
-
-	// mm_simwa_email_btn_text.
-	$mm_simwa_email_btn_text = carbon_get_theme_option( 'mm_simwa_email_btn_text' );
-	if ( ! empty( $mm_simwa_email_btn_text ) ) {
-		if ( carbon_get_theme_option( 'mm_simwa_show_icon' ) ) {
-			$icon                   = mm_simwa_get_icon()['email'];
-			$data['email_btn_text'] = $icon . ' ' . $mm_simwa_email_btn_text;
-		} else {
-			$data['email_btn_text'] = $mm_simwa_email_btn_text;
-		}
-	} else {
-		$data['email_btn_text'] = 'Send Email';
-	}
-
-	// Telegram.
-	$telegram = carbon_get_theme_option( 'mm_simwa_telegram' );
-	if ( ! empty( $telegram ) ) {
-		$data['telegram']      = $telegram;
-		$telegram              = str_replace( '@', '', $telegram );
-		$data['telegram_link'] = 'https://t.me/' . $telegram;
-	} else {
-		$data['telegram']      = 'budi_haryono';
-		$data['telegram_link'] = 'https://t.me/@budi_haryono';
-	}
-
-	// mm_simwa_telegram_btn_text.
-	$mm_simwa_telegram_btn_text = carbon_get_theme_option( 'mm_simwa_telegram_btn_text' );
-	if ( ! empty( $mm_simwa_telegram_btn_text ) ) {
-		if ( carbon_get_theme_option( 'mm_simwa_show_icon' ) ) {
-			$icon                      = mm_simwa_get_icon()['telegram'];
-			$data['telegram_btn_text'] = $icon . ' ' . $mm_simwa_telegram_btn_text;
-		} else {
-			$data['telegram_btn_text'] = $mm_simwa_telegram_btn_text;
-		}
-	} else {
-		$data['telegram_btn_text'] = 'Chat via Telegram';
-	}
-
-	// Call Number.
-	$call_number = carbon_get_theme_option( 'mm_simwa_call_number' );
-	if ( ! empty( $call_number ) ) {
-		$data['call_number']      = $call_number;
-		$x                        = substr_replace( $call_number, '62', 0, 1 );
-		$x                        = str_replace( array( '-', ' ' ), '', $x );
-		$data['call_number_link'] = 'tel:+' . $x;
-	} else {
-		$data['call_number']      = '0813-9891-2341';
-		$data['call_number_link'] = 'tel:+6281398912341';
-	}
-
-	$mm_simwa_show_icon = carbon_get_theme_option( 'mm_simwa_show_icon' );
-
-	$mm_simwa_call_btn_text = carbon_get_theme_option( 'mm_simwa_call_btn_text' );
-	if ( ! empty( $mm_simwa_call_btn_text ) ) {
-		if ( $mm_simwa_show_icon ) {
-			$icon                  = mm_simwa_get_icon()['phone'];
-			$data['call_btn_text'] = $icon . ' ' . $mm_simwa_call_btn_text;
-		} else {
-			$data['call_btn_text'] = $mm_simwa_call_btn_text;
-		}
-	} else {
-		$data['call_btn_text'] = 'Call Us';
-	}
-
-	// Wa Number.
-	$wa_number = carbon_get_theme_option( 'mm_simwa_wa_number' );
-	if ( ! empty( $wa_number ) ) {
-		$data['wa_number'] = $wa_number;
-		$x                 = substr_replace( $wa_number, '62', 0, 1 );
-		$x                 = str_replace( array( '-', ' ' ), '', $x );
-
-		if ( carbon_get_theme_option( 'mm_simwa_include_title' ) ) {
-			$text_prefix = simwa_text_prefix();
-			$post_title  = simwa_post_title();
-			$url_prefix  = simwa_url_prefix();
-			$post_url    = simwa_post_url();
-			$pesan       = $text_prefix . '%20' . $post_title . '%20' . $url_prefix . '%20' . $post_url;
-			if ( is_singular() ) {
-				$data['wa_number_link'] = 'https://api.whatsapp.com/send?phone=' . $x . '&text=' . $pesan;
-			} else {
-				$data['wa_number_link'] = 'https://api.whatsapp.com/send?phone=' . $x;
-			}
-		} else {
-			$data['wa_number_link'] = 'https://api.whatsapp.com/send?phone=' . $x;
-		}
-	} else {
-		$data['wa_number']      = '0813-9891-2341';
-		$data['wa_number_link'] = 'https://api.whatsapp.com/send?phone=6281398912341';
-	}
-
-	$mm_simwa_wa_btn_text = carbon_get_theme_option( 'mm_simwa_wa_btn_text' );
-	if ( ! empty( $mm_simwa_wa_btn_text ) ) {
-		if ( $mm_simwa_show_icon ) {
-			$icon                = mm_simwa_get_icon()['whatsapp'];
-			$data['wa_btn_text'] = $icon . ' ' . $mm_simwa_wa_btn_text;
-		} else {
-			$data['wa_btn_text'] = $mm_simwa_wa_btn_text;
-		}
-	} else {
-		$data['wa_btn_text'] = 'Chat via WhatsApp';
-	}
-
-	return $data;
-}
-
 
 /**
  * Get Prefix

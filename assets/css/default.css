@@ -11,8 +11,9 @@
   box-shadow: 0 0 10px #111111 inset;
 }
 #simwa-container.default.simwa-show {
+  /* width: 800px; */
   visibility: visible;
-  z-index: 999999;
+  z-index: 99;
   opacity: 1;
   transform: scale(1);
   transition: all 0.3s ease-in-out;
