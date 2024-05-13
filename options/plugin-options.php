@@ -205,9 +205,10 @@ function mm_simwa_get_data() {
 	$telegram = carbon_get_theme_option( 'mm_simwa_telegram' );
 	if ( ! empty( $telegram ) ) {
 		$data['telegram']      = $telegram;
+		$telegram              = str_replace( '@', '', $telegram );
 		$data['telegram_link'] = 'https://t.me/' . $telegram;
 	} else {
-		$data['telegram']      = '@budi_haryono';
+		$data['telegram']      = 'budi_haryono';
 		$data['telegram_link'] = 'https://t.me/@budi_haryono';
 	}
 
