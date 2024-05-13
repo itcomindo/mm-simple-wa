@@ -22,6 +22,9 @@ function simwa_call_assets() {
 	$mm_simwa_style = carbon_get_theme_option( 'mm_simwa_style' );
 	wp_enqueue_style( 'mm-simwa-custom', MM_SIMPLE_WA_URL . 'assets/css/' . $mm_simwa_style . '.css', array(), '1.0', 'all' );
 
+	// Responsive CSS.
+	wp_enqueue_style( 'mm-simwa-responsive', MM_SIMPLE_WA_URL . 'assets/css/responsive.css', array(), '1.0', 'all' );
+
 	// Load JS.
 	wp_enqueue_script( 'mm-simple-wa', MM_SIMPLE_WA_URL . 'assets/js/js.js', array( 'jquery' ), '1.0', true );
 }

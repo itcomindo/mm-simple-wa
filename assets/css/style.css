@@ -172,7 +172,7 @@ span.simwa-text-logo {
   transform: scale(1);
   opacity: 1;
   visibility: visible;
-  z-index: 999999;
+  z-index: 99;
   transition: 0.3s linear all;
 }
 
@@ -244,7 +244,7 @@ span.simwa-text-logo {
   transform: scale(1);
   opacity: 1;
   visibility: visible;
-  z-index: 999999;
+  z-index: 99;
   transition: 0.3s linear all;
 }
 

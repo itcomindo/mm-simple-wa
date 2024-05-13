@@ -1,0 +1,29 @@
+/**
+=========================
+* 568px
+* @todo 568px
+*=========================
+*/
+@media screen and (max-height: 568px) {
+  /* Bottom Right */
+  #simwa-trigger[data-simwa-position="bottom-right"] {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  /* Bottom Left */
+  #simwa-trigger[data-simwa-position="bottom-left"] {
+    left: 1rem;
+    bottom: 1rem;
+  }
+
+  #simwa-container[data-simwa-position="bottom-right"] {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  #simwa-container[data-simwa-position="bottom-left"] {
+    left: 1rem;
+    bottom: 1rem;
+  }
+}

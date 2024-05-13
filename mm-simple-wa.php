@@ -5,7 +5,7 @@
  * Author: Budi Haryono
  * Author URI: https://budiharyono.com/
  * Description: Simple WhatsApp Button
- * Version: 1.0
+ * Version: 1.0.1
  * Plugin URI: https://budiharyono.com/
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
